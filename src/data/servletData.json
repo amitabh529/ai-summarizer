@@ -1,0 +1,128 @@
+{
+  "headings": [
+    {
+      "title": "What is a Servlet?",
+      "content": "A Servlet is a Java class used to handle requests and responses in a web application. It's\na server-side technology that runs on a Java-enabled web server (like Apache Tomcat)\nand helps build dynamic web applications.\nServlets are part of the Java EE (Jakarta EE) platform and extend the capabilities of\nservers by handling HTTP requests (like form submissions, URL parameters, etc.).",
+      "start_page": 1,
+      "start_line": 1,
+      "end_page": 1,
+      "end_line": 7,
+      "subheadings": []
+    },
+    {
+      "title": "Key Features:",
+      "content": "● Runs inside a Servlet Container (e.g., Tomcat).\n● Processes HTTP requests/responses.\n● Platform-independent (Java-based).\n● Works closely with HTML/JS/CSS frontends.",
+      "start_page": 1,
+      "start_line": 9,
+      "end_page": 1,
+      "end_line": 13,
+      "subheadings": []
+    },
+    {
+      "title": "Servlet Lifecycle (Managed by Servlet Container):",
+      "content": "There are 3 main phases in the servlet lifecycle:",
+      "start_page": 1,
+      "start_line": 16,
+      "end_page": 1,
+      "end_line": 17,
+      "subheadings": [
+        {
+          "title": "Initialization (init())",
+          "content": "● Called once when the servlet is first loaded into memory.\n● Used for initial setup (e.g., opening DB connections, reading config).\n\njava\nCopyEdit\npublic void init(ServletConfig config) throws ServletException {\n    // Initialization code\n}",
+          "start_page": 1,
+          "start_line": 19,
+          "end_page": 1,
+          "end_line": 27,
+          "subheadings": []
+        },
+        {
+          "title": "Request Handling (service())",
+          "content": "● Called every time a client sends a request.\n● Delegates to doGet(), doPost(), etc., depending on the HTTP method.\n\njava\npublic void service(ServletRequest req, ServletResponse res) throws ServletException,\nIOException {\n    // Request processing logic\n}",
+          "start_page": 2,
+          "start_line": 1,
+          "end_page": 2,
+          "end_line": 9,
+          "subheadings": []
+        },
+        {
+          "title": "Destruction (destroy())",
+          "content": "● Called once before the servlet is removed from memory.\n● Used to clean up resources (e.g., close DB connections).\n\njava\nCopyEdit\npublic void destroy() {\n    // Cleanup code\n}",
+          "start_page": 2,
+          "start_line": 12,
+          "end_page": 2,
+          "end_line": 20,
+          "subheadings": []
+        }
+      ]
+    },
+    {
+      "title": "Servlet Lifecycle Summary:",
+      "content": "Servlet Loaded\n             ↓\n          init()\n             ↓\n   ┌─────────────────────┐\n   │    service() called │ ← (for each request)\n   └─────────────────────┘\n             ↓\n         destroy()",
+      "start_page": 2,
+      "start_line": 23,
+      "end_page": 2,
+      "end_line": 34,
+      "subheadings": []
+    },
+    {
+      "title": "TOMCAT APACHE SERVER",
+      "content": "They provide run time environment to Java servlets",
+      "start_page": 3,
+      "start_line": 1,
+      "end_page": 3,
+      "end_line": 2,
+      "subheadings": [
+        {
+          "title": "Standalone Tomcat",
+          "content": "● This is Tomcat installed separately on your computer.\n● To run your web app, you have to:\n\n○ Place your .war file in the webapps folder.\n○ Start the Tomcat server manually.\n\n● It reads the .war file and runs your web application.\n🧠 Think of it like:  \"I have a web server (Tomcat) already installed, and I'm giving it my\napp (WAR) to run.\"",
+          "start_page": 3,
+          "start_line": 3,
+          "end_page": 3,
+          "end_line": 13,
+          "subheadings": []
+        },
+        {
+          "title": "Embedded Tomcat",
+          "content": "● Here, Tomcat is included inside your Java application using tools like Maven or\nGradle.\n● You don't need to install Tomcat separately.\n● When you run your app (usually a .jar file), it automatically starts Tomcat and\nruns itself.\n🧠 Think of it like: \"My app already comes with Tomcat inside it. Just run the app — and it\nhandles the server part too!\"",
+          "start_page": 3,
+          "start_line": 15,
+          "end_page": 3,
+          "end_line": 23,
+          "subheadings": []
+        }
+      ]
+    }
+  ],
+  "summary": "Servlets are Java classes that handle requests and responses in web applications, running on Java-enabled web servers like Apache Tomcat. They are part of the Java EE platform and extend server capabilities by handling HTTP requests. The servlet lifecycle includes initialization, request handling, and destruction, managed by the servlet container. Tomcat provides a runtime environment for Java servlets and can be used in standalone or embedded configurations.",
+  "keywords": [
+    "Servlet",
+    "Java",
+    "web application",
+    "Apache Tomcat",
+    "Java EE",
+    "HTTP requests",
+    "Servlet Container",
+    "Tomcat",
+    "initialization",
+    "request handling",
+    "destruction",
+    "lifecycle",
+    "Standalone Tomcat",
+    "Embedded Tomcat",
+    "Maven",
+    "Gradle",
+    "server-side technology",
+    "dynamic web applications",
+    "platform-independent",
+    "HTML",
+    "JS",
+    "CSS",
+    "service()",
+    "init()",
+    "destroy()",
+    "webapps folder",
+    "WAR file",
+    "run time environment",
+    "Jakarta EE"
+  ]
+}
